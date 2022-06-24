@@ -1,9 +1,6 @@
 import * as React from 'react';
+import { CenteredLayoutProps } from '../layout.vm';
 import { CenteredLayoutContainer } from './centered-home.layout.style';
-
-interface CenteredLayoutProps {
-	children?: React.ReactNode;
-}
 
 export const CenteredHomeLayout: React.FC<CenteredLayoutProps> = ({
 	children,

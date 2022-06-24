@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { getIdCharacter, getNumberFilms } from '../../common-app/utils';
 import { CommonButton } from '../../common/components/common-button';
 import { ErrorComponent } from '../../common/components/error';
@@ -83,7 +83,6 @@ export const CharactersListComponent: React.FC = () => {
 					) : null}
 				</>
 			) : null}
-			<Link to='/character_details/1'>go to details</Link>
 		</>
 	);
 };

@@ -1,16 +1,11 @@
 import {
-	START_FETCH_CHARACTERS,
-	SUCCESS_FETCH_CHARACTERS,
-	ERROR_FETCH_CHARACTERS,
+	START_FETCH_CHARACTER_DETAILS,
+	SUCCESS_FETCH_CHARACTER_DETAILS,
+	ERROR_FETCH_CHARACTER_DETAILS,
 } from '../types';
 
 const initialState = {
-	characters: [],
-	pagination: {
-		count: 0,
-		next: 'https://swapi.dev/api/people/?page=1',
-		previous: null,
-	},
+	character: [],
 	isLoading: false,
 	isFetching: false,
 	isSuccess: false,
@@ -19,26 +14,22 @@ const initialState = {
 
 export default function (state = initialState, action) {
 	switch (action.type) {
-		case START_FETCH_CHARACTERS:
+		case START_FETCH_CHARACTER_DETAILS:
 			return {
 				...state,
 				isLoading: action.payload,
 				isFetching: action.payload,
 				isSuccess: false,
 			};
-		case SUCCESS_FETCH_CHARACTERS:
+		case SUCCESS_FETCH_CHARACTER_DETAILS:
 			return {
 				...state,
-				isFetching: false,
 				isLoading: false,
+				isFetching: false,
 				isSuccess: true,
-				pagination: {
-					...action.payload,
-					results: undefined,
-				},
-				characters: [...state.characters, ...action.payload.results],
+				character: action.payload,
 			};
-		case ERROR_FETCH_CHARACTERS:
+		case ERROR_FETCH_CHARACTER_DETAILS:
 			return {
 				...state,
 				isFetching: false,

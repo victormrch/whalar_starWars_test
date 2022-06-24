@@ -1,4 +1,3 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { AppRouter } from './core/router/router.component';
@@ -8,12 +7,10 @@ import { Provider } from 'react-redux';
 import { GlobalStyle } from './core/theme/app.style';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-	<React.StrictMode>
-		<Provider store={store}>
-			<GlobalStyle />
-			<AppRouter>
-				<App />
-			</AppRouter>
-		</Provider>
-	</React.StrictMode>
+	<Provider store={store}>
+		<GlobalStyle />
+		<AppRouter>
+			<App />
+		</AppRouter>
+	</Provider>
 );

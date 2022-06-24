@@ -4,8 +4,6 @@ import {
 	ERROR_FETCH_CHARACTERS,
 } from '../types';
 
-const BASE_URL = 'https://swapi.dev/api/';
-
 export function fetchCharactersAction(url) {
 	return async dispatch => {
 		dispatch(startFetchCharacters());

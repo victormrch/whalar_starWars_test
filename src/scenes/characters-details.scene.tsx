@@ -1,11 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { CenteredLayout } from '../layout';
+import { CharacterDetailsComponent } from '../pods/characters-details';
 
 export const CharacterDetailsScene: React.FC = () => {
 	return (
 		<>
-			<h1>Hello from Details Scene</h1>
-			<Link to='/character_list'>Go back</Link>
+			<CenteredLayout>
+				<CharacterDetailsComponent />
+			</CenteredLayout>
 		</>
 	);
 };
