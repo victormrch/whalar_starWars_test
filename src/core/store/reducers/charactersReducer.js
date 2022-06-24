@@ -6,6 +6,11 @@ import {
 
 const initialState = {
 	characters: [],
+	pagination: {
+		count: 0,
+		next: 'https://swapi.dev/api/people/?page=1',
+		previous: null,
+	},
 	isLoading: false,
 	isFetching: false,
 	isSuccess: false,
@@ -21,17 +26,16 @@ export default function (state = initialState, action) {
 				isFetching: action.payload,
 			};
 		case SUCCESS_FETCH_CHARACTERS:
-			console.log('state:', state, 'action', action.payload);
 			return {
 				...state,
 				isFetching: false,
 				isLoading: false,
 				isSuccess: true,
-				characters: [
-					...new Set([...state.characters, ...action.payload.results]),
-				],
-
-				// characters: action.payload,
+				pagination: {
+					...action.payload,
+					results: undefined,
+				},
+				characters: [...state.characters, ...action.payload.results],
 			};
 		case ERROR_FETCH_CHARACTERS:
 			return {

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { getIdCharacter, getNumberFilms } from '../../common-app/utils';
-import { getLastPage } from '../../common-app/utils/getNumbersPages';
 import { CommonButton } from '../../common/components/common-button';
 import { ErrorComponent } from '../../common/components/error';
 import { LoaderComponent } from '../../common/components/loader';
@@ -23,40 +22,21 @@ export const CharactersListComponent: React.FC = () => {
 	const navigate = useNavigate();
 
 	const dispatch = useDispatch();
-	const [nextPage, setNextPage] = React.useState(1);
-	const [lastPage, setLastPage] = React.useState(false);
-	// const [items, setItems] = React.useState<CharactersListModel[]>([]);
+
+	const { characters, isError, isLoading, isFetching, isSuccess, pagination } =
+		useSelector(state => state.characters);
 
 	React.useEffect(() => {
-		dispatch<any>(fetchCharactersAction(nextPage));
+		if (characters.length === 0) {
+			dispatch<any>(fetchCharactersAction(pagination.next));
+		}
 	}, []);
 
-	const { characters, isError, isLoading, isFetching, isSuccess } = useSelector(
-		state => state.characters
-	);
-
-	console.log(characters);
-
-	// React.useEffect(() => {
-	// 	console.log('isSucces=>', isSuccess);
-	// 	if (isSuccess) {
-	// 		console.log('Entra', characters);
-	// 		setItems([...items, ...characters.results]);
-	// 		const last = getLastPage(
-	// 			characters.count,
-	// 			characters.results.length,
-	// 			nextPage
-	// 		);
-
-	// 		if (last) setLastPage(true);
-	// 	}
-	// }, [isSuccess, lastPage, nextPage]);
-
 	const onShowMoreCharacters = () => {
-		setNextPage(nextPage + 1);
+		dispatch<any>(fetchCharactersAction(pagination.next));
 	};
 
-	const onClickDetail = (url: string) => {
+	const onClickDetail = (url: string) => () => {
 		const characterId = getIdCharacter(url);
 		navigate(routes.character_details(characterId));
 	};
@@ -79,7 +59,10 @@ export const CharactersListComponent: React.FC = () => {
 					<CharactersListContainer>
 						{characters?.map(
 							(characters: CharactersListModel, items: number) => (
-								<CharactersListCardContainer key={items}>
+								<CharactersListCardContainer
+									key={items}
+									onClick={onClickDetail(characters.url)}
+								>
 									<CharacterListTitleContainer>
 										<h1>{characters.name}</h1>
 									</CharacterListTitleContainer>
@@ -92,7 +75,7 @@ export const CharactersListComponent: React.FC = () => {
 						)}
 					</CharactersListContainer>
 
-					{!lastPage ? (
+					{pagination.next !== null ? (
 						<CommonButton
 							buttonName={'Load More'}
 							onClick={onShowMoreCharacters}

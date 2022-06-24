@@ -6,12 +6,12 @@ import {
 
 const BASE_URL = 'https://swapi.dev/api/';
 
-export function fetchCharactersAction(page) {
+export function fetchCharactersAction(url) {
 	return async dispatch => {
 		dispatch(startFetchCharacters());
 
 		try {
-			const response = await fetch(`${BASE_URL}/people/?page=${page}`);
+			const response = await fetch(url);
 			const data = await response.json();
 			dispatch(successFetchCharacters(data));
 		} catch (error) {
