@@ -77,7 +77,7 @@ export const CharactersListComponent: React.FC = () => {
 
 					{pagination.next !== null ? (
 						<CommonButton
-							buttonName={'Load More'}
+							buttonName='Load More'
 							onClick={onShowMoreCharacters}
 						/>
 					) : null}
