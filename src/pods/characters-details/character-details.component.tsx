@@ -7,6 +7,7 @@ import { ErrorComponent } from '../../common/components/error';
 import { LoaderComponent } from '../../common/components/loader';
 import { routes } from '../../core/router/routes';
 import { fetchCharactersDetailsAction } from '../../core/store/actions/characterDetailsActions';
+import { fetchFilmsAction } from '../../core/store/actions/filmsActions';
 import { CenteredPodLayout } from '../../layout';
 import {
 	CharactersDetailsCharacteristicsGrid,
@@ -23,11 +24,22 @@ export const CharacterDetailsComponent: React.FC = () => {
 		state => state.characterDetails
 	);
 
-	console.log(character, isError, isLoading, isFetching, isSuccess);
+	const {
+		films,
+		isErrorFilms,
+		isLoadingFilms,
+		isFetchingFilms,
+		isSuccessFilms,
+	} = useSelector(state => state.films);
 
 	React.useEffect(() => {
 		dispatch<any>(fetchCharactersDetailsAction(id));
 	}, []);
+
+	React.useEffect(() => {
+		dispatch<any>(fetchFilmsAction(character.films));
+	}, [character.films]);
+
 	const HandleBackMainList = () => {
 		navigate(routes.character_list);
 	};
@@ -64,6 +76,11 @@ export const CharacterDetailsComponent: React.FC = () => {
 							<CharactersDetailsTitle>
 								{getNumberFilms(character.films)}
 							</CharactersDetailsTitle>
+							{isSuccessFilms
+								? films.map((film: string, index: number) => (
+										<li key={index}>{film}</li>
+								  ))
+								: null}
 						</div>
 					</>
 				) : null}
