@@ -1,3 +1,3 @@
+export { CenteredHomeLayout } from './centered-home.layout/centered-home.layout';
+export { CenteredPodLayout } from './centered-pod.layout/centered-pod.layout';
 export { CenteredLayout } from './centered.layout/centered.layout';
-export { CenteredHomeLayout } from './centered-home/centered-home.layout';
-export { CenteredPodLayout } from './centered-pod/centered-pod.layout';

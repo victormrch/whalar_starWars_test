@@ -59,7 +59,7 @@ export const CharactersListComponent: React.FC = () => {
 			) : null}
 			{isSuccess ? (
 				<>
-					<CharacterListTitle>star wars characters</CharacterListTitle>
+					<CharacterListTitle>List of characters</CharacterListTitle>
 					<CharactersListContainer>
 						{characters?.map(
 							(characters: CharactersListModel, items: number) => (

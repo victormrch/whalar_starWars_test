@@ -1,5 +1,5 @@
 import React from 'react';
 
-export interface CenteredLayoutProps {
+export interface LayoutProps {
 	children?: React.ReactNode;
 }

@@ -1,10 +1,8 @@
 import * as React from 'react';
-import { CenteredLayoutProps } from '../layout.vm';
+import { LayoutProps } from '../layout.vm';
 import { CenteredPodLayoutContainer } from './centered-pod.style';
 
-export const CenteredPodLayout: React.FC<CenteredLayoutProps> = ({
-	children,
-}) => {
+export const CenteredPodLayout: React.FC<LayoutProps> = ({ children }) => {
 	return (
 		<>
 			<CenteredPodLayoutContainer>{children}</CenteredPodLayoutContainer>
