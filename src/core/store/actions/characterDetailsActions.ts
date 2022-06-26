@@ -11,7 +11,7 @@ interface payload {
 
 const BASE_URL = 'https://swapi.dev/api/people/';
 
-export function fetchCharactersDetailsAction(id: string) {
+export function fetchCharactersDetailsAction(id: any) {
 	return async (dispatch: (payload: payload) => void) => {
 		dispatch(startFetchCharactersDetails());
 
