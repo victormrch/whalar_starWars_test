@@ -18,13 +18,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchCharactersAction } from '../../core/store/actions/charactersActions';
 import { routes } from '../../core/router/routes';
 
+interface RootState {
+	characters: any;
+}
+
 export const CharactersListComponent: React.FC = () => {
 	const navigate = useNavigate();
 
 	const dispatch = useDispatch();
 
 	const { characters, isError, isLoading, isFetching, isSuccess, pagination } =
-		useSelector(state => state.characters);
+		useSelector((state: RootState) => state.characters);
 
 	React.useEffect(() => {
 		if (characters.length === 0) {

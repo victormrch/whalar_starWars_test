@@ -9,7 +9,7 @@
 		"format": "prettier --write .",
 		"lint": "eslint --fix . --ext .js,.jsx,.ts,.tsx",
 		"test": "jest --verbose",
-		"test:watch": "npm test -- --watchAll -i"
+		"test:watch": "npm test -- --coverage --watchAll"
 	},
 	"dependencies": {
 		"jest-environment-jsdom": "^28.1.1",

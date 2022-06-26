@@ -15,13 +15,18 @@ import {
 	CharactersDetailsTitle,
 } from './character-details.style';
 
+interface RootState {
+	characterDetails: any;
+	films: any;
+}
+
 export const CharacterDetailsComponent: React.FC = () => {
 	const navigate = useNavigate();
 	const { id } = useParams<{ id: string }>();
 	const dispatch = useDispatch();
 
 	const { character, isError, isLoading, isFetching, isSuccess } = useSelector(
-		state => state.characterDetails
+		(state: RootState) => state.characterDetails
 	);
 
 	const {
@@ -30,7 +35,7 @@ export const CharacterDetailsComponent: React.FC = () => {
 		isLoadingFilms,
 		isFetchingFilms,
 		isSuccessFilms,
-	} = useSelector(state => state.films);
+	} = useSelector((state: RootState) => state.films);
 
 	React.useEffect(() => {
 		dispatch<any>(fetchCharactersDetailsAction(id));
