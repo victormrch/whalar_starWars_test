@@ -3,7 +3,6 @@ import {
 	TextIntroDescription,
 	TextIntroDescriptionContainer,
 	TextIntroTitle,
-	TextIntroTitleContainer,
 } from './text-intro.style';
 
 export const TextIntroComponent: React.FC = () => {

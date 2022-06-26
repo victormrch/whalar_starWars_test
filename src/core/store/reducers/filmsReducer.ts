@@ -4,6 +4,14 @@ import {
 	ERROR_FETCH_FILMS,
 } from '../types';
 
+interface filmState {
+	films: Array<string>;
+	isLoadingFilms: boolean;
+	isFetchingFilms: boolean;
+	isSuccessFilms: boolean;
+	isErrorFilms: boolean;
+}
+
 const initialState = {
 	films: [],
 	isLoadingFilms: false,
@@ -12,7 +20,7 @@ const initialState = {
 	isErrorFilms: false,
 };
 
-export default function (state = initialState, action) {
+export default function (state: filmState = initialState, action: any) {
 	switch (action.type) {
 		case START_FETCH_FILMS:
 			return {

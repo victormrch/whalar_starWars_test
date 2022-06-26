@@ -4,10 +4,15 @@ import {
 	ERROR_FETCH_CHARACTER_DETAILS,
 } from '../types';
 
+interface payload {
+	type: string;
+	payload: any;
+}
+
 const BASE_URL = 'https://swapi.dev/api/people/';
 
-export function fetchCharactersDetailsAction(id) {
-	return async dispatch => {
+export function fetchCharactersDetailsAction(id: string) {
+	return async (dispatch: (payload: payload) => void) => {
 		dispatch(startFetchCharactersDetails());
 
 		try {
@@ -16,7 +21,7 @@ export function fetchCharactersDetailsAction(id) {
 			dispatch(successFetchCharactersDetails(data));
 		} catch (error) {
 			console.log(error);
-			dispatch(FetchCharactersDetails());
+			dispatch(errorFetchCharactersDetails());
 		}
 	};
 }
@@ -26,11 +31,11 @@ const startFetchCharactersDetails = () => ({
 	payload: true,
 });
 
-const successFetchCharactersDetails = character => ({
+const successFetchCharactersDetails = (character: string[]) => ({
 	type: SUCCESS_FETCH_CHARACTER_DETAILS,
 	payload: character,
 });
-const FetchCharactersDetails = () => ({
+const errorFetchCharactersDetails = () => ({
 	type: ERROR_FETCH_CHARACTER_DETAILS,
 	payload: true,
 });

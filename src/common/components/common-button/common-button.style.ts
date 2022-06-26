@@ -1,13 +1,14 @@
 import styled from 'styled-components';
-
-// --clr-neon: #2E67FF;
-// --clr-bg: #173278;
+import {
+	buttonBackgroundColor,
+	buttonPrincipalColor,
+} from '../../../core/theme/app.style';
 
 export const ButtonContainer = styled.div`
 	display: flex;
 	align-content: center;
 	justify-content: center;
-	padding: 10px;
+	padding: 0.625rem;
 `;
 
 export const ButtonCommon = styled.button`
@@ -15,20 +16,21 @@ export const ButtonCommon = styled.button`
 	display: inline-block;
 	cursor: pointer;
 	text-decoration: none;
-	color: #2e67ff;
-	background: #173278;
-	border: #2e67ff 0.125em solid;
+	color: ${buttonPrincipalColor};
+	background: ${buttonBackgroundColor};
+	border: ${buttonPrincipalColor} 0.125em solid;
 	padding: 0.25em 1em;
 	border-radius: 0.25em;
 	text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
-	box-shadow: inset 0 0 0.5em 0 #2e67ff, 0 0 0.5em 0 #2e67ff;
+	box-shadow: inset 0 0 0.5em 0 ${buttonPrincipalColor},
+		0 0 0.5em 0 ${buttonPrincipalColor};
 	position: relative;
 
 	::before {
 		pointer-events: none;
 		content: '';
 		position: absolute;
-		background: #2e67ff;
+		background: ${buttonPrincipalColor};
 		top: 120%;
 		left: 0;
 		width: 100%;
@@ -45,16 +47,16 @@ export const ButtonCommon = styled.button`
 		bottom: 0;
 		left: 0;
 		right: 0;
-		box-shadow: 0 0 2em 0.5em #2e67ff;
+		box-shadow: 0 0 2em 0.5em ${buttonPrincipalColor};
 		opacity: 0;
-		background-color: #2e67ff;
+		background-color: ${buttonPrincipalColor};
 		z-index: -1;
 		transition: opacity 100ms linear;
 	}
 
 	:hover {
-		background: #2e67ff;
-		color: #173278;
+		background: ${buttonPrincipalColor};
+		color: ${buttonBackgroundColor};
 		text-shadow: none;
 	}
 

@@ -5,7 +5,7 @@ export const CenteredLayoutContainer = styled.div`
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
-	padding: 20px;
+	padding: 1.25rem;
 	height: 100vh;
 
 	@media (max-width: 500px) {

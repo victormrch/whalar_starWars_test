@@ -1,4 +1,9 @@
 import styled from 'styled-components';
+import {
+	circleAnimationLoader,
+	fontTerciaryColor,
+	textInfoColor,
+} from '../../../core/theme/app.style';
 
 export const Loader = styled.div`
 	position: relative;
@@ -8,17 +13,29 @@ export const Loader = styled.div`
 		content: '';
 		display: block;
 		font-size: 0;
-		width: 48px;
-		height: 48px;
+		width: 3rem;
+		height: 3rem;
 		background-color: #fff;
 		background-image: radial-gradient(
 				circle 12px at 22px 22px,
-				#fccc6b 100%,
+				${textInfoColor} 100%,
 				transparent 0
 			),
-			radial-gradient(circle 10px at 6px 40px, #fc9c43 100%, transparent 0),
-			radial-gradient(circle 14px at 31px -6px, #fc9c43 100%, transparent 0),
-			radial-gradient(circle 5px at 40px 30px, #fc9c43 100%, transparent 0);
+			radial-gradient(
+				circle 10px at 6px 40px,
+				${circleAnimationLoader} 100%,
+				transparent 0
+			),
+			radial-gradient(
+				circle 14px at 31px -6px,
+				${circleAnimationLoader} 100%,
+				transparent 0
+			),
+			radial-gradient(
+				circle 5px at 40px 30px,
+				${circleAnimationLoader} 100%,
+				transparent 0
+			);
 		border-radius: 50%;
 		animation: rotate 1s linear infinite;
 	}
@@ -29,10 +46,10 @@ export const Loader = styled.div`
 		top: 0%;
 		transform: translate(-50%, -100%);
 		left: 50%;
-		width: 24px;
-		height: 12px;
-		background: #fff;
-		border-radius: 50px 50px 0 0;
+		width: 1.5rem;
+		height: 0.75rem;
+		background: ${fontTerciaryColor};
+		border-radius: 3.125rem 3.125rem 0 0;
 	}
 	@keyframes flix {
 		0%,
@@ -53,5 +70,5 @@ export const Loader = styled.div`
 `;
 
 export const LoaderTitle = styled.h2`
-	color: #fccc6b;
+	color: ${textInfoColor};
 `;

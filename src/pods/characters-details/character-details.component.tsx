@@ -76,6 +76,17 @@ export const CharacterDetailsComponent: React.FC = () => {
 							<CharactersDetailsTitle>
 								{getNumberFilms(character.films)}
 							</CharactersDetailsTitle>
+
+							{isErrorFilms ? (
+								<CenteredPodLayout>
+									<ErrorComponent />
+								</CenteredPodLayout>
+							) : null}
+							{isLoadingFilms && isFetchingFilms ? (
+								<CenteredPodLayout>
+									<LoaderComponent />
+								</CenteredPodLayout>
+							) : null}
 							{isSuccessFilms
 								? films.map((film: string, index: number) => (
 										<li key={index}>{film}</li>

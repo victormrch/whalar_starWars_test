@@ -1,4 +1,9 @@
 import styled from 'styled-components';
+import {
+	fontPrimaryColor,
+	fontSecondaryColor,
+	fontTerciaryColor,
+} from '../../core/theme/app.style';
 
 export const CharactersListContainer = styled.div`
 	display: grid;
@@ -17,9 +22,9 @@ export const CharactersListContainer = styled.div`
 
 export const CharacterListTitle = styled.h1`
 	text-transform: capitalize;
-	color: #ecb900;
-	padding-left: 50px;
-	font-size: 50px; ;
+	color: ${fontPrimaryColor};
+	padding-left: 3.125rem;
+	font-size: 3.125rem;
 `;
 
 export const CharactersListCardContainer = styled.div`
@@ -28,11 +33,11 @@ export const CharactersListCardContainer = styled.div`
 	margin: 0.625rem;
 	width: 16.25rem;
 	height: 8.5rem;
-	border-radius: 15px;
+	border-radius: 0.938rem;
 	box-shadow: rgb(50 50 93 / 25%) 0px 6px 12px -2px,
 		rgb(0 0 0 / 30%) 0px 3px 7px -3px;
-	background-color: white;
-	color: black;
+	background-color: ${fontTerciaryColor};
+	color: ${fontSecondaryColor};
 `;
 
 export const CharacterListTitleContainer = styled.div`

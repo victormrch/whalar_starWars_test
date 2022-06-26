@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import { textInfoColor } from '../../../core/theme/app.style';
 
 export const ErrorTitle = styled.h1`
-	color: #fccc6b;
+	color: ${textInfoColor};
 	text-align: center;
 `;
 

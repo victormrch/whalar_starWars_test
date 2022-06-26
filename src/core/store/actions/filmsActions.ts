@@ -4,21 +4,27 @@ import {
 	ERROR_FETCH_FILMS,
 } from '../types';
 
-export function fetchFilmsAction(urls) {
-	return async dispatch => {
+interface payload {
+	type: string;
+	payload: any;
+}
+
+export function fetchFilmsAction(urls: Array<string>) {
+	return async (dispatch: (payload: payload) => void) => {
 		dispatch(startFetchFilms());
 
-		const fetchJson = url => fetch(url).then(res => res.json());
+		const fetchJson = (url: string) => fetch(url).then(res => res.json());
 
 		Promise.all(urls.map(fetchJson))
 			.then(films => {
-				const filmsTitles = [];
+				const filmsTitles: Array<String> = [];
 				films.forEach(name => filmsTitles.push(name.title));
 
 				dispatch(successFetchFilms(filmsTitles));
 			})
 			.catch(error => {
-				dispatch(errorFetchFilms(error));
+				console.log(error);
+				dispatch(errorFetchFilms());
 			});
 	};
 }
@@ -28,7 +34,7 @@ const startFetchFilms = () => ({
 	payload: true,
 });
 
-const successFetchFilms = films => ({
+const successFetchFilms = (films: String[]) => ({
 	type: SUCCESS_FETCH_FILMS,
 	payload: films,
 });

@@ -4,8 +4,13 @@ import {
 	ERROR_FETCH_CHARACTERS,
 } from '../types';
 
-export function fetchCharactersAction(url) {
-	return async dispatch => {
+interface payload {
+	type: string;
+	payload: any;
+}
+
+export function fetchCharactersAction(url: string) {
+	return async (dispatch: (payload: payload) => void) => {
 		dispatch(startFetchCharacters());
 
 		try {
@@ -24,7 +29,7 @@ const startFetchCharacters = () => ({
 	payload: true,
 });
 
-const successFetchCharacters = characters => ({
+const successFetchCharacters = (characters: string[]) => ({
 	type: SUCCESS_FETCH_CHARACTERS,
 	payload: characters,
 });
