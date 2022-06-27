@@ -26,7 +26,6 @@ Here you can see the application deployed on netlify in the next link.
 
 ## Architecture used in the project
 
-Architecture used in the project:
 I have followed a pod architecture where it is broken into layout, scenes and pods as follows:
 
 - common file: components that are not linked to the domain and are promotable to libraries.
