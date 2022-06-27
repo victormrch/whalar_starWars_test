@@ -84,6 +84,7 @@ src
 - [ ] Implement input to be able to search for characters in the application.
 - [ ] Create Breadcrumbs to improve the user experience in the application.
 - [ ] Bring the image of the characters from another API related to the one used, as the current one does not have it.
+- [ ] Implement translation system like i18n to support different languages
 
 
 
