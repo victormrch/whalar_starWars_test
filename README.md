@@ -20,3 +20,19 @@
 - prettier: for formatting all the application code.
 - typescript: to be able to type the classes in the application.
 - jest & testing-library : to be able to perform unit tests in the application.
+
+## Architecture used in the project
+
+Architecture used in the project:
+I have followed a pod architecture where it is broken into layout, scenes and pods as follows:
+
+- common file: components that are not linked to the domain and are promotable to libraries.
+- common-app: components linked to the domain and that are reused in the application.
+- core: transversal components such as, store, router, theme.
+- layout: master pages.
+- pods: components grouped by domain.
+- scenes: pages of the application, a scene can be composed of a layout and one or more pods. 
+
+
+
+
