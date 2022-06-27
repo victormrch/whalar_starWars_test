@@ -1,7 +1,7 @@
 # Star Wars Whalar Test
 Here you can see the application deployed on netlify in the next link.
 
-[Star Wars Characters](starwarswhalar.netlify.app)
+([starwarswhalar.netlify.app](https://starwarswhalar.netlify.app/))
 
 ## Run project
 
