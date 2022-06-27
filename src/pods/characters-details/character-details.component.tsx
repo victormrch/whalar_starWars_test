@@ -10,11 +10,18 @@ import { fetchCharactersDetailsAction } from '../../core/store/actions/character
 import { fetchFilmsAction } from '../../core/store/actions/filmsActions';
 import { CenteredPodLayout } from '../../layout';
 import {
+	CharacterDetailButtonContainer,
+	CharacterDetailGoBackContainer,
+	CharacterDetailGoBackIcon,
+	CharacterDetailsFilmContainer,
+	CharacterDetailsFilmIcon,
+	CharacterDetailsTitleContainer,
+	CharacterDetailsTitleIcon,
 	CharactersDetailsCharacteristicsGrid,
 	CharactersDetailsContainer,
+	CharactersDetailsFilm,
 	CharactersDetailsTitle,
 } from './character-details.style';
-
 interface RootState {
 	characterDetails: any;
 	films: any;
@@ -51,10 +58,18 @@ export const CharacterDetailsComponent: React.FC = () => {
 	return (
 		<>
 			<CharactersDetailsContainer>
-				<CommonButton
-					buttonName='Back to Main List'
-					onClick={HandleBackMainList}
-				/>
+				{isSuccess && isSuccessFilms ? (
+					<CharacterDetailGoBackContainer>
+						<CharacterDetailGoBackIcon onClick={HandleBackMainList} />
+						<CharacterDetailButtonContainer>
+							<CommonButton
+								buttonName='Back to Main List'
+								onClick={HandleBackMainList}
+							/>
+						</CharacterDetailButtonContainer>
+					</CharacterDetailGoBackContainer>
+				) : null}
+
 				{isError ? (
 					<CenteredPodLayout>
 						<ErrorComponent />
@@ -67,20 +82,26 @@ export const CharacterDetailsComponent: React.FC = () => {
 				) : null}
 				{isSuccess ? (
 					<>
-						<CharactersDetailsTitle>{character.name}</CharactersDetailsTitle>
+						<CharacterDetailsTitleContainer>
+							<CharacterDetailsTitleIcon />
+							<CharactersDetailsTitle>{character.name}</CharactersDetailsTitle>
+						</CharacterDetailsTitleContainer>
 						<CharactersDetailsCharacteristicsGrid>
-							<h2>Height: {character.height}cm</h2>
-							<h2>Gender: {character.gender}</h2>
-							<h2>Mass: {character.mass}Kg</h2>
-							<h2>Hair color: {character.hair_color}</h2>
-							<h2>Eye color: {character.eye_color}</h2>
-							<h2>Skin color: {character.skin_color}</h2>
-							<h2>Birth year: {character.birth_year}</h2>
+							<h2>Height {character.height}cm</h2>
+							<h2>Gender : {character.gender}</h2>
+							<h2>Mass : {character.mass}Kg</h2>
+							<h2>Hair color : {character.hair_color}</h2>
+							<h2>Eye color : {character.eye_color}</h2>
+							<h2>Skin color : {character.skin_color}</h2>
+							<h2>Birth year : {character.birth_year}</h2>
 						</CharactersDetailsCharacteristicsGrid>
 						<div>
-							<CharactersDetailsTitle>
-								{getNumberFilms(character.films)}
-							</CharactersDetailsTitle>
+							<CharacterDetailsFilmContainer>
+								<CharacterDetailsFilmIcon />
+								<CharactersDetailsTitle>
+									{getNumberFilms(character.films)}
+								</CharactersDetailsTitle>
+							</CharacterDetailsFilmContainer>
 
 							{isErrorFilms ? (
 								<CenteredPodLayout>
@@ -94,7 +115,9 @@ export const CharacterDetailsComponent: React.FC = () => {
 							) : null}
 							{isSuccessFilms
 								? films.map((film: string, index: number) => (
-										<li key={index}>{film}</li>
+										<CharactersDetailsFilm key={index}>
+											{film}
+										</CharactersDetailsFilm>
 								  ))
 								: null}
 						</div>

@@ -1,13 +1,10 @@
 import styled from 'styled-components';
-import { fontTerciaryColor } from '../../../core/theme/app.style';
 
 export const FooterContainer = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	height: 8.5rem;
-	border-top: 0.063rem solid ${fontTerciaryColor};
-	margin-top: 2.5rem;
+	height: 6.5rem;
 
 	@media (max-width: 500px) {
 		flex-direction: column;

@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import { fontTerciaryColor } from '../../../core/theme/app.style';
+import { fontPrimaryColor } from '../../../core/theme/app.style';
 
 export const NavBarContainer = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 6rem;
-	border-bottom: 0.063rem solid ${fontTerciaryColor};
+	border-bottom: 0.063rem solid ${fontPrimaryColor};
 	margin-bottom: 2.5rem;
 
 	:hover {
