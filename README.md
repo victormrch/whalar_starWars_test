@@ -33,6 +33,40 @@ I have followed a pod architecture where it is broken into layout, scenes and po
 - pods: components grouped by domain.
 - scenes: pages of the application, a scene can be composed of a layout and one or more pods. 
 
+## Structure and component of the application
+
+```
+src
+|__assets
+|__common
+   |__common-button
+   |__error
+   |__loader
+   |__scroll-top
+|__common-app
+   |__utils
+   |__components
+       |__app-footer
+       |__app-navbar       
+|__core
+   |__router
+   |__store
+   |__theme
+|__layout
+   |__app.layout
+   |__centered-home.layout
+   |__centered-pod.layout
+   |__centered.layout
+|__pods
+   |__characters-details
+   |__characters-list
+   |__text-intro
+|__scenes
+   |__characters-details.scene
+   |__characters-list.scene
+   |__home.scene
+ ```  
+ 
 
 ## TODOs
 
