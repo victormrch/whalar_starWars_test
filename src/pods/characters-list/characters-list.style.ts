@@ -38,6 +38,12 @@ export const CharactersListCardContainer = styled.div`
 		rgb(0 0 0 / 30%) 0px 3px 7px -3px;
 	background-color: ${fontTerciaryColor};
 	color: ${fontSecondaryColor};
+	transition: transform 0.3s;
+
+	:hover {
+		cursor: pointer;
+		transform: scale(1.1);
+	}
 `;
 
 export const CharacterListTitleContainer = styled.div`

@@ -8,8 +8,6 @@ export const NavBarContainer = styled.div`
 	height: 6rem;
 	border-bottom: 0.063rem solid ${fontTerciaryColor};
 	margin-bottom: 2.5rem;
-	position: sticky;
-	overflow: auto;
 
 	:hover {
 		cursor: pointer;

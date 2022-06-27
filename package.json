@@ -12,6 +12,7 @@
 		"test:watch": "npm test -- --coverage --watchAll"
 	},
 	"dependencies": {
+		"@styled-icons/bootstrap": "^10.34.0",
 		"jest-environment-jsdom": "^28.1.1",
 		"react": "^18.0.0",
 		"react-dom": "^18.0.0",
