@@ -34,5 +34,21 @@ I have followed a pod architecture where it is broken into layout, scenes and po
 - scenes: pages of the application, a scene can be composed of a layout and one or more pods. 
 
 
+## TODOs
+
+- [ ]  Create the mockup of the redux store in order to make the missing UTs.
+- [ ]  Complete the missing UTs of the components.
+- [ ]  Review the typing and interfaces in the store and in some components.
+- [ ]  Create e2e with cypress.
+- [ ]  Create the continuous integration for the deployment.
+
+##  Improvements in the application
+
+- [ ] Create dark / light mode.
+- [ ] Implement input to be able to search for characters in the application.
+- [ ] Create Breadcrumbs to improve the user experience in the application.
+- [ ] Bring the image of the characters from another API related to the one used, as the current one does not have it.
+
+
 
 
