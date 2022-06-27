@@ -4,7 +4,7 @@ import {
 	ERROR_FETCH_CHARACTER_DETAILS,
 } from '../types';
 
-interface character {
+interface Character {
 	name: string;
 	height: string;
 	mass: string;
@@ -23,8 +23,8 @@ interface character {
 	url: string;
 }
 
-interface characterDetail {
-	character: Array<character>;
+interface CharacterDetail {
+	character: Array<Character>;
 	isLoading: boolean;
 	isFetching: boolean;
 	isSuccess: boolean;
@@ -39,7 +39,7 @@ const initialState = {
 	isError: false,
 };
 
-export default function (state: characterDetail = initialState, action: any) {
+export default function (state: CharacterDetail = initialState, action: any) {
 	switch (action.type) {
 		case START_FETCH_CHARACTER_DETAILS:
 			return {

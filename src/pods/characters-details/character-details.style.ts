@@ -48,7 +48,6 @@ export const CharactersDetailsCharacteristicsGrid = styled.div`
 	box-shadow: rgb(50 50 93 / 25%) 0px 6px 12px -2px,
 		rgb(0 0 0 / 30%) 0px 3px 7px -3px;
 	background-color: ${fontTerciaryColor};
-	width: 100vwx;
 	height: 30%;
 	color: ${fontSecondaryColor};
 	background: url(${tattoine});
@@ -69,7 +68,7 @@ export const CharacterDetailSpan = styled.span`
 export const CharacterDetailsTitleContainer = styled.div`
 	display: flex;
 	align-items: center;
-	border-bottom: 2px solid ${buttonPrincipalColor};
+	border-bottom: 0.125rem solid ${buttonPrincipalColor};
 	margin: 1rem 0 1rem 0;
 
 	@media (max-width: 500px) {
@@ -77,8 +76,8 @@ export const CharacterDetailsTitleContainer = styled.div`
 	}
 `;
 export const CharacterDetailsTitleIcon = styled(PersonBadge)`
-	height: 50px;
-	width: 50px;
+	height: 3.125rem;
+	width: 3.125rem;
 	color: ${buttonPrincipalColor};
 `;
 export const CharactersDetailsTitle = styled.h1`
@@ -89,7 +88,7 @@ export const CharacterDetailsFilmContainer = styled.div`
 	display: flex;
 	align-items: center;
 	margin: 1rem 0 1rem 0;
-	border-bottom: 2px solid ${buttonPrincipalColor};
+	border-bottom: 0.125rem solid ${buttonPrincipalColor};
 
 	@media (max-width: 500px) {
 		margin: 2rem 0 2rem 0;
@@ -97,12 +96,16 @@ export const CharacterDetailsFilmContainer = styled.div`
 `;
 
 export const CharacterDetailsFilmIcon = styled(Film)`
-	height: 50px;
-	width: 50px;
+	height: 3.125rem;
+	width: 3.125rem;
 	color: ${buttonPrincipalColor};
 `;
 
 export const CharactersDetailsFilm = styled.li`
-	font-size: 30px;
-	margin-bottom: 5px;
+	font-size: 1.875rem;
+	margin-bottom: 0.313rem;
+
+	@media (max-width: 425px) {
+		font-size: 1.25rem;
+	}
 `;

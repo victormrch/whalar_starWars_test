@@ -4,7 +4,7 @@ import {
 	ERROR_FETCH_CHARACTER_DETAILS,
 } from '../types';
 
-interface payload {
+interface Payload {
 	type: string;
 	payload: any;
 }
@@ -12,7 +12,7 @@ interface payload {
 const BASE_URL = 'https://swapi.dev/api/people/';
 
 export function fetchCharactersDetailsAction(id: any) {
-	return async (dispatch: (payload: payload) => void) => {
+	return async (dispatch: (payload: Payload) => void) => {
 		dispatch(startFetchCharactersDetails());
 
 		try {

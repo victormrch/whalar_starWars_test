@@ -4,13 +4,13 @@ import {
 	ERROR_FETCH_CHARACTERS,
 } from '../types';
 
-interface payload {
+interface Payload {
 	type: string;
 	payload: any;
 }
 
 export function fetchCharactersAction(url: string) {
-	return async (dispatch: (payload: payload) => void) => {
+	return async (dispatch: (payload: Payload) => void) => {
 		dispatch(startFetchCharacters());
 
 		try {

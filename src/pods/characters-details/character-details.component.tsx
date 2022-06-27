@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
-import { getNumberFilms } from '../../common-app/utils';
+import { getNumberFilms, getYearsAgo } from '../../common-app/utils';
 import { CommonButton } from '../../common/components/common-button';
 import { ErrorComponent } from '../../common/components/error';
 import { LoaderComponent } from '../../common/components/loader';
@@ -55,6 +55,8 @@ export const CharacterDetailsComponent: React.FC = () => {
 	const HandleBackMainList = () => {
 		navigate(routes.character_list);
 	};
+
+	console.log('peliculas', films);
 	return (
 		<>
 			<CharactersDetailsContainer>
@@ -114,9 +116,9 @@ export const CharacterDetailsComponent: React.FC = () => {
 								</CenteredPodLayout>
 							) : null}
 							{isSuccessFilms
-								? films.map((film: string, index: number) => (
+								? films.map((film: any, index: number) => (
 										<CharactersDetailsFilm key={index}>
-											{film}
+											{film.title} ~ {getYearsAgo(film.release)}
 										</CharactersDetailsFilm>
 								  ))
 								: null}

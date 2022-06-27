@@ -4,13 +4,13 @@ import {
 	ERROR_FETCH_CHARACTERS,
 } from '../types';
 
-interface pagination {
+interface Pagination {
 	count: number;
 	next: string;
 	previous: string | null;
 }
 
-interface character {
+interface Character {
 	name: string;
 	height: string;
 	mass: string;
@@ -29,9 +29,9 @@ interface character {
 	url: string;
 }
 
-interface charactersState {
-	characters: Array<character>;
-	pagination: pagination;
+interface CharactersState {
+	characters: Array<Character>;
+	pagination: Pagination;
 	isLoading: boolean;
 	isFetching: boolean;
 	isSuccess: boolean;
@@ -52,7 +52,7 @@ const initialState = {
 	isError: false,
 };
 
-export default function (state: charactersState = initialState, action: any) {
+export default function (state: CharactersState = initialState, action: any) {
 	switch (action.type) {
 		case START_FETCH_CHARACTERS:
 			return {
