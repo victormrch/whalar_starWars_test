@@ -8,8 +8,8 @@ interface SwitchRoutes {
 
 export const switchRoutes: SwitchRoutes = {
 	home: '/',
-	character_list: 'character_list',
-	character_details: 'character_details/:id',
+	character_list: '/character_list',
+	character_details: '/character_details/:id',
 };
 
 interface Routes extends Omit<SwitchRoutes, 'character_details'> {

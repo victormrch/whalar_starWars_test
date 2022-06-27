@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextIntro component specs should render correctly and create snapshot 1`] = `
+<DocumentFragment>
+  <h1
+    class="sc-bczRLJ fczBkI"
+  >
+    A long time ago in a galaxy far, 
+    <br />
+     far away...
+  </h1>
+  <div
+    class="sc-gsnTZi jNwNDw"
+  >
+    <h1
+      class="sc-dkzDqf ixBrQW"
+    >
+      This is Whalar's technical test for the position of Frontend Developer. 
+      <br />
+      The young padawan, Victor Ramon, will demonstrate his skills in front of the senate to achieve his dream of joining the Jedi order of Whalar. 
+      <br />
+      His lightsaber forged with React, Redux, Typescript, Styled components and packaged with Vite will help him on his way to dazzle the great Jedi masters.
+    </h1>
+  </div>
+</DocumentFragment>
+`;

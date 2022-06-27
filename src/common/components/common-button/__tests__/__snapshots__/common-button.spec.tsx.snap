@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CommonButton component specs should render correctly and create snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bczRLJ kjcozG"
+  >
+    <button
+      class="sc-gsnTZi fDlIUR"
+    >
+      Test
+    </button>
+  </div>
+</DocumentFragment>
+`;

@@ -1,11 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { ScrollToTop } from '../common/components/scroll-top';
+import { AppLayout } from '../layout/app.layout/app.layout';
+import { CharactersListComponent } from '../pods/characters-list';
 
 export const CharactersListScene: React.FC = () => {
 	return (
 		<>
-			<h1>Hello from List Scene</h1>
-			<Link to='/character_details/1'>Navigate to characters details</Link>
+			<AppLayout>
+				<ScrollToTop />
+				<CharactersListComponent />
+			</AppLayout>
 		</>
 	);
 };

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error component spec should render correctly and create snapshot 1`] = `
+<DocumentFragment>
+  <img
+    alt="R2D2 and C3PO error"
+    class="sc-gsnTZi jRTjwM"
+  />
+  <h1
+    class="sc-bczRLJ jylBfq"
+  >
+    Sorry, an error has ocurred!. We are trying to fix it! 
+    <br />
+    Please try again later!
+  </h1>
+</DocumentFragment>
+`;
